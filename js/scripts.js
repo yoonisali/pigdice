@@ -42,6 +42,7 @@ function rollLogic() {
         player.diceScore = 0;
         changeTurn();
     }
+    displayScore();
 }
 
 function hold() {
@@ -51,20 +52,20 @@ function hold() {
     changeTurn();
 }
 
-// function reset () {
-//     window.location.reload();
-// }
 
 // UI Logic 
 
-document.querySelector(#)
-document.querySelector
+function displayScore() { 
+document.querySelector("#player1-total").innerHtml = playerOne.totalScore;
+document.querySelector("#player1-roll").innerHTML = playerOne.diceScore;
+document.querySelector("#player2-total").innerHTML = playerTwo.totalScore;
+document.querySelector("#player2-roll").innerHTML = playerTwo.diceScore;
+console.log(playerOne.diceScore)
+}
 
 window.addEventListener("load", function () {
 
     document.querySelector(".btn-roll").addEventListener("click", rollLogic());
     document.querySelector(".btn-hold").addEventListener("click", hold());
-    document.querySelector(".btn-reset").addEventListener("click", reset ());
-
-
+    document.querySelector(".btn-roll").addEventListener("click", displayScore());
 });
