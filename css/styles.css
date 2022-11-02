@@ -1,7 +1,8 @@
 body {
     text-align: center;
     padding-top: 50px;
-    background-color: yellow;
+    background-color: black;
+    color: white;
 }
 
 #player1-column {

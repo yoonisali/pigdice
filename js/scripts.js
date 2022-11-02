@@ -10,16 +10,15 @@ function Player(turn) {
     this.turn = turn
 }
 
-
 let playerOne = new Player(true);
 let playerTwo = new Player(false);
 
 function whosTurn() {
     let player;
     if (playerOne.turn === true) {
-        player = "playerOne";
+        player = playerOne;
     } else if (playerTwo.turn === true) {
-        player = "playerTwo";
+        player = playerTwo;
     }
     return player;
 }
@@ -36,34 +35,36 @@ function changeTurn() {
 
 function rollLogic() {
     let diceRoll = dice();
+    let player = whosTurn();
     if (diceRoll !== 1) {
-        return diceRoll;
+        player.diceScore += diceRoll;
     } else if (diceRoll === 1) {
+        player.diceScore = 0;
         changeTurn();
-        return "You rolled a 1!" + " " + whosTurn() + "'s" + " " + "turn!";
     }
 }
 
-function holdButton() {
-    diceRoll += totalScore;
-    return playerTwo;
+function hold() {
+    let player = whosTurn();
+    player.totalScore += player.diceScore;
+    player.diceScore = 0;
+    changeTurn();
 }
 
+// function reset () {
+//     window.location.reload();
+// }
 
 // UI Logic 
+
+document.querySelector(#)
+document.querySelector
 
 window.addEventListener("load", function () {
 
     document.querySelector(".btn-roll").addEventListener("click", rollLogic());
-    document.querySelector(".btn-reset").addEventListener("click", function () {
-        window.location.reload();
-    });
-    document.querySelector(".btn-hold").addEventListener("click", function () {
-
-    })
-
-})
+    document.querySelector(".btn-hold").addEventListener("click", hold());
+    document.querySelector(".btn-reset").addEventListener("click", reset ());
 
 
-
-
+});
